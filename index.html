@@ -1,27 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Comparison</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="BeerSlider.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="image-wrapper">
-        <img
-          src="https://github.com/andriusmv/imgcomparisionscapp/blob/main/Screenshot%20(2305).png?raw=true"
-          alt="Before"
-        />
-        <div class="slider">
-          <img
-            src="https://github.com/andriusmv/imgcomparisionscapp/blob/main/Screenshot%20(2306).png?raw=true"
-            alt="After"
-          />
-          <div class="handle"></div>
-        </div>
+    <div id="slider" class="beer-slider" data-beer-label="after">
+      <img src="Screenshot (2305).png" alt="" />
+      <div class="beer-reveal" data-beer-label="before">
+        <img src="Screenshot (2306).png" alt="" />
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="BeerSlider.js"></script>
+    <script>
+      new BeerSlider(document.getElementById("slider"));
+    </script>
   </body>
 </html>
