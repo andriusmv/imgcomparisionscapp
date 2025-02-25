@@ -1,22 +1,24 @@
-var slide = document.getElementById('slide');
-var container = document.querySelector('.container');
+const slider = document.querySelector(".slider");
+const handle = document.querySelector(".handle");
+let isDragging = false;
 
-function handleMove(e) {
-    var containerRect = container.getBoundingClientRect();
-    var x = e.clientX - containerRect.left;
+handle.addEventListener("mousedown", () => {
+  isDragging = true;
+});
 
-    // Calculate width as a percentage of container width
-    var widthPercent = (x / containerRect.width) * 100;
+window.addEventListener("mouseup", () => {
+  isDragging = false;
+});
 
-    // Keep width within 0% to 100%
-    if (widthPercent < 0) {
-        widthPercent = 0;
-    } else if (widthPercent > 100) {
-        widthPercent = 100;
-    }
+window.addEventListener("mousemove", (event) => {
+  if (!isDragging) return;
 
-    slide.style.width = widthPercent + '%';
-}
+  const containerRect = slider.parentElement.getBoundingClientRect();
+  let offsetX = event.clientX - containerRect.left;
 
-window.onmousemove = handleMove;
-window.ontouchmove = handleMove;
+  if (offsetX < 0) offsetX = 0;
+  if (offsetX > containerRect.width) offsetX = containerRect.width;
+
+  slider.style.width = `${offsetX}px`;
+  handle.style.left = `${offsetX}px`;
+});
