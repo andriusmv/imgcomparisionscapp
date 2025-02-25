@@ -1,31 +1,32 @@
 * {
-  margin:0;
-  padding:0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 .container {
-  position: absolute;
-  width: 100%;
-  height: 1200px;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Or a smaller pixel value */
+    overflow: hidden;
 }
+
 .container .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
 }
-.container .slide.slide1{
-  background: url(https://lh3.googleusercontent.com/ogw/AF2bZyiLz5tphFovlD0jZRkhBBcqQcLnWjFZ3hp4NmEEB-EGaPa2=s64-c-mo);
-  background-attachment: fixed;
-  background-position: bottom;
-  background-repeat: no-repeat;
+
+.container .slide.slide1 {
+    background: url('before.jpg'); /* Replace with a stable image URL or local file */
 }
-.container .slide.slide2{
-  background: url(https://images2.alphacoders.com/468/4682.jpg);
-  background-attachment: fixed;
-  background-position: bottom;
-  background-repeat: no-repeat;
-  left: 50%;
+
+.container .slide.slide2 {
+    background: url('after.jpg'); /* Replace with a stable image URL or local file */
+    width: 50%;
 }
